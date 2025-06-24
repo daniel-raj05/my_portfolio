@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Raj A. - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Techy Animation for Header */
+        .techy-header {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .techy-text {
+            color: #4ABEF9;
+            font-size: 4rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(74, 190, 249, 0.5);
+            /* Subdued glow */
+        }
+
+        .techy-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(74, 190, 249, 0), #4ABEF9, rgba(74, 190, 249, 0));
+            /* Gradient shine */
+            transform: translateX(-100%);
+            animation: techy-shine 5s infinite linear;
+        }
+
+        @keyframes techy-shine {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Animation for fading in content */
+        .fade-in {
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scale animation for skill icons */
+        .skill-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .skill-icon:hover {
+            transform: scale(1.2);
+        }
+
+        /* Styles for the Certificate Modal */
+        .certificate-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow: auto;
+        }
+
+        .certificate-modal-content {
+            position: relative;
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+            transform: translateY(10%);
+        }
+
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: #f1f1f1;
+            font-size: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+
+    <header class="h-screen flex items-center justify-center bg-gray-900 fade-in techy-header">
+        <div>
+            <h1 class="techy-text">Hi, I'm Daniel Raj A.</h1>
+            <span class="text-purple-400 text-2xl md:text-4xl block">Web Developer & AI Enthusiast</span>
+        </div>
+    </header>
+
+    <section id="about" class="bg-gray-800 py-12 px-4 sm:px-6 lg:px-8 fade-in">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- About Me Text -->
+            <div>
+                <h2 class="text-3xl font-bold mb-6 text-blue-400">About Me</h2>
+                <p class="text-lg leading-relaxed">
+                    I am Daniel Raj A, a Computer Science enthusiast currently pursuing my BSc, specializing in Web Development and AI. I am passionate about crafting intuitive, responsive web applications and leveraging AI tools to solve real-world problems.
+                    <br><br>
+                     Seeking a challenging Enviornment to apply my skills in real-world projects.
+                     I am skilled in building intuitive, responsive sites and using Al tools efficiently.
+                </p>
+
+                <h3 class="text-xl font-semibold mt-4 mb-2 text-blue-300">Skills:</h3>
+                <ul class="list-disc ml-6">
+                    <li><strong>Languages:</strong> Python, Java, JavaScript, HTML, CSS,Tamil, English(Proficiency)</li>
+                    <li><strong>Frameworks/Tools:</strong> MongoDB, MySQL, Tailwind CSS, Flask, Pandas, Matplotlib,Git, VS Code, Figma, UI/UX Design, Canva, Google Colab, Ms office basics, Sensors & IoT</li>
+                    <li><strong>AI Tools:</strong> NLP, TensorFlow basics, ML basics</li>
+                </ul>
+            </div>
+    </section>
+
+    <section id="skills" class="bg-gray-700 py-12 px-4 sm:px-6 lg:px-8 fade-in">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Skill Card Template - Repeat for each skill -->
+                <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">HTML5</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">CSS3</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">Javascript</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Tailwind_CSS_logo.svg" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">Tailwind Css</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">Python</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="asserts/sql-server.png" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">MySQL</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">MongoDB</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="asserts/icons8-flask-50.png" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">Flask</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="asserts/icons8-pandas-48.png" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">Pandas</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="asserts/matplotlib.png" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">Matplotlib</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">Git</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">VS Code</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">Figma</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="asserts/uiux.png" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">UI/UX Design</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="asserts/canva.png" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">Canva</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="asserts/colab.png" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">Google Colab</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="asserts/office.png" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">Ms office</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="https://static.thenounproject.com/png/5684985-200.png" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">Sensors & IoT</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="asserts/nlp.png" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">NLP</h3>
+                </div>
+                  <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="https://www.tensorflow.org/images/tf_logo.png" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">TensorFlow basics</h3>
+                </div>
+                 <div class="skill-card p-4 bg-gray-600 rounded-lg hover:scale-105 transition-transform duration-200 flex flex-col items-center justify-center">
+                    <img src="asserts/ml.png" alt="HTML Icon" class="h-8 w-auto mb-2 skill-icon">
+                    <h3 class="text-center text-lg font-semibold">ML basics</h3>
+                </div>
+            
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="bg-gray-800 py-12 px-4 sm:px-6 lg:px-8 fade-in">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Project Card Template - Repeat for each project -->
+                <a href="https://example.com/nutrition" target="_blank"
+                    class="block bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4">
+                    <h3 class="text-xl font-semibold mb-2">Nutrition Monitoring System</h3>
+                    <p class="mb-4">Developed a Python-based application to analyze and visualize nutritional information from food data. Focused on data-driven insights and user-friendly outputs using libraries like Pandas and Matplotlib.</p>
+                     <div class="flex items-center space-x-2">
+                         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Icon" class="w-6 h-6">
+                         <img src="asserts/icons8-pandas-48.png" alt="Pandas Icon" class="w-6 h-6">
+                         <img src="asserts/matplotlib.png" alt="Matplotlib Icon" class="w-6 h-6">
+                           <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Icon" class="w-6 h-6">
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS Icon" class="w-6 h-6">
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript Icon" class="w-6 h-6">
+                     </div>
+                </a>
+
+                <a href="report.pdf" target="_blank"
+                    class="block bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4">
+                    <h3 class="text-xl font-semibold mb-2">Spam Email Detection using NLP</h3>
+                    <p class="mb-4">Developed a machine learning model to detect spam emails.
+                        Used Natural Language Processing techniques to classify messages.</p>
+                         <div class="flex items-center space-x-2">
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Icon" class="w-6 h-6">
+                             <img src="asserts/nlp.png" alt="Nlp Icon" class= "w-6 h-6">
+                             <img src="asserts/ml.png" alt="Ml Icon" class= "w-6 h-6">
+                             <img src="https://www.tensorflow.org/images/tf_logo.png" alt="TensorFlow Icon" class= w-6 h-6>
+                         </div>
+                </a>
+
+                <a href="https://example.com/mentalhealth" target="_blank"
+                    class="block bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4">
+                    <h3 class="text-xl font-semibold mb-2">Mental Health Support System</h3>
+                    <p class="mb-4">Built a web-based platform with frontend and backend for emotion-based mental wellness tracking.
+                        Features: User registration, emotion input, dashboard, and mood history.</p>
+                         <div class="flex items-center space-x-2">
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Icon" class="w-6 h-6">
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS Icon" class="w-6 h-6">
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript Icon" class="w-6 h-6">
+                             <img src="asserts/icons8-flask-50.png" alt="Flask Icon" class="w-6 h-6">
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Tailwind_CSS_logo.svg" alt="Tailwind Icon" class= "w-7 h-3">
+                         </div>
+                </a>
+
+                <!-- End Project Card Template -->
+
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="bg-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-blue-400 mb-8 text-center">Certifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Certificate Card Template (Repeated) -->
+                <a href="#" target="_blank"
+                    class="certificate-card block bg-gray-700 rounded-lg shadow-md transition-all duration-300 p-4 hover:shadow-lg hover:scale-105 transform-gpu relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-white relative z-10">AI Foundation Course</h3>
+                </a>
+                <!-- End Certificate Card Template -->
+
+               <a href="#" target="_blank"
+                    class="certificate-card block bg-gray-700 rounded-lg shadow-md transition-all duration-300 p-4 hover:shadow-lg hover:scale-105 transform-gpu relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-white relative z-10">OOPs using Python</h3>
+                </a>
+
+                <a href="#" target="_blank"
+                    class="certificate-card block bg-gray-700 rounded-lg shadow-md transition-all duration-300 p-4 hover:shadow-lg hover:scale-105 transform-gpu relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-white relative z-10">IoT & UI/UX Design</h3>
+                </a>
+
+                <a href="#" target="_blank"
+                    class="certificate-card block bg-gray-700 rounded-lg shadow-md transition-all duration-300 p-4 hover:shadow-lg hover:scale-105 transform-gpu relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-white relative z-10">MongoDB for NM</h3>
+                </a>
+
+                  <a href="#" target="_blank"
+                    class="certificate-card block bg-gray-700 rounded-lg shadow-md transition-all duration-300 p-4 hover:shadow-lg hover:scale-105 transform-gpu relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-white relative z-10">Effective Leadership & Cybersecurity Awareness</h3>
+                </a>
+
+                <a href="#" target="_blank"
+                    class="certificate-card block bg-gray-700 rounded-lg shadow-md transition-all duration-300 p-4 hover:shadow-lg hover:scale-105 transform-gpu relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-white relative z-10">Linguaskill (Cambridge)</h3>
+                </a>
+
+        </div>
+    </section>
+
+    <section id="achievements" class="bg-gray-800 py-12 px-4 sm:px-6 lg:px-8 fade-in">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6">Achievements</h2>
+            <ul class="list-disc ml-6 text-lg">
+                <li>2nd Prize - Caption Writing Competition (Women's Empowerment)</li>
+                <li>Overall in Code Hunt, 3rd in Debugging - Inter-department tech events</li>
+                <li>Participant – VIT Build with AI Hackathon</li>
+                <li>Attended Google Challenge Meet 2025</li>
+                <li>Presented a paper: "One Hundred Years of Solitude by Gabriel Garcia Márquez" at the Annual National Students Conference on NOBEL CONNECT: Redefining the World Through Literature</li>
+            </ul>
+        </div>
+    </section>
+
+   <footer class="bg-gray-800 py-6 text-center">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center space-x-6 mb-4">
+                <!-- Replace these with your actual profile links -->
+                <a href="https://www.linkedin.com/in/daniel-raj-a-54487128b/" class="text-gray-400 hover:text-blue-300 transition-colors duration-200" target="_blank">
+                    LinkedIn
+                </a>
+                <a href="https://github.com/daniel-raj05" class="text-gray-400 hover:text-blue-300 transition-colors duration-200" target="_blank">
+                    GitHub
+                </a>
+                <a href="#" class="text-gray-400 hover:text-blue-300 transition-colors duration-200" target="_blank">
+                    Twitter
+                </a>
+                <!-- Add other social/professional platforms as needed -->
+            </div>
+            <p class="text-gray-500">© 2024 Daniel Raj A. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="certificate-modal">
+        <span class="close-button" onclick="closeModal()">×</span>
+        <img class="certificate-modal-content" id="certificateImage">
+    </div>
+
+    <script>
+        // Certificate Modal
+        const modal = document.getElementById("certificateModal");
+        const modalImg = document.getElementById("certificateImage");
+        const certificateCards = document.querySelectorAll(".certificate-card");
+
+        certificateCards.forEach(card => {
+            card.addEventListener("click", function() {
+                const imageSrc = this.dataset.image;
+                modal.style.display = "block";
+                modalImg.src = imageSrc;
+            });
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Close the modal if the user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+
+</html> 
